@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 10vh;
 }
 
 body {
@@ -35,41 +36,45 @@ body {
   font-size: var(--h2-fs);
 }
 
-.line {
-  background-color: var(--primary-color);
-  height: 4px;
-  width: 65vw;
-  margin: auto;
-  margin-bottom: 2rem;
-  border-radius: 10px;
-
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-
 /*NAVBAR*/
 #navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-color: var(--primary-color);
   height: 10vh;
   padding: 0 var(--container-spacing);
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
-#navbar h2 {
+#nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+#nav-items a {
   color: var(--white);
-  font-weight: 500;
+  text-decoration: none;
+
+  font-size: 20px;
+}
+
+a#name {
   letter-spacing: 2px;
-  font-size: 2vw;
+  font-size: 35px;
 }
 
 .icon {
   background: transparent;
   color: var(--white);
-  font-size: 3rem;
+  font-size: 2.5rem;
 
   border: none;
   border-radius: 20px;
-  margin: 20px;
+  margin: 0 10px;
 
   cursor: pointer;
 
@@ -84,7 +89,7 @@ body {
 #hero {
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 90vh;
   margin: 0 var(--container-spacing);
@@ -98,6 +103,7 @@ body {
 
 #hero-img img {
   width: 100%;
+  border-radius: 50%;
   animation: slide-up 0.8s ease forwards;
 }
 
@@ -106,18 +112,6 @@ body {
   font-size: 5vw;
   font-weight: 500;
   text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.typed-out-container {
-  display: inline-block;
-}
-
-#typed-out {
-  overflow: hidden;
-  border-right: 0.1em solid transparent;
-  white-space: nowrap;
-  width: 0;
-  animation: typing var(--hero-animation-duration) forwards, blink 1s infinite;
 }
 
 /*ABOUT-SKILLS*/
@@ -355,6 +349,7 @@ body {
 
 /*CONTACT*/
 #contact {
+  height: 90vh;
   padding: var(--container-spacing) 20vw;
 }
 
