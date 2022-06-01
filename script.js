@@ -1,4 +1,11 @@
 /*NAVBAR*/
+const navbar = document.getElementById("navbar");
+const burgerMenu = document.getElementById("burger-menu");
+
+burgerMenu.addEventListener("click", () => {
+  navbar.classList.toggle("pressed");
+})
+
 document.getElementById("linked-in").onclick = function () {
   window.open(
     "https://www.linkedin.com/in/mads-s%C3%B8nderstrup-jensen-025309225/",

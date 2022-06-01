@@ -39,12 +39,23 @@ body {
 /*NAVBAR*/
 #navbar {
   background-color: var(--primary-color);
+  width: 100%;
   height: 10vh;
   padding: 0 var(--container-spacing);
+  
 
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
+}
+
+#burger-menu {
+  float: right;
+  color: var(--white);
+  font-size: 3em;
+  margin: 2vh;
+
+  display: none;
 }
 
 #nav-items {
@@ -52,7 +63,9 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+  min-height: 200px;
+
+  transition: all 3s ease-in;
 }
 
 #nav-items a {
@@ -91,7 +104,7 @@ a#name {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   margin: 0 var(--container-spacing);
 
   overflow: hidden;
@@ -440,6 +453,10 @@ textarea {
   animation: 0.25s exit both;
 }
 
+.pressed {
+  max-height: 280px;
+}
+
 /*MEDIA QUERIES*/
 @media (max-width: 768px) {
   :root {
@@ -449,6 +466,18 @@ textarea {
 
   #navbar {
     justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  #burger-menu {
+    display: block;
+  }
+
+  #nav-items {
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
   }
 
   #name {
